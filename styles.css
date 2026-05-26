@@ -1,0 +1,840 @@
+:root {
+  --ink: #221b1a;
+  --muted: #5d6368;
+  --line: #e2e6e8;
+  --paper: #f7f8f8;
+  --soft: #eef5f2;
+  --deep: #303942;
+  --navy: #0d376e;
+  --blue: #005daa;
+  --gold: #f2c419;
+  --cream: #f7ddb1;
+  --white: #fff;
+  --shadow: 0 18px 48px rgba(23, 37, 43, .13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  display: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.first-view {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: calc(100vh - 166px);
+  padding: clamp(110px, 13vw, 210px) 7vw 7vw;
+  color: var(--white);
+  background: #071116 url("assets/ophthalmology-hero.png") center 46% / cover no-repeat;
+}
+
+.first-view::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(110deg, rgba(7, 17, 22, .78) 0%, rgba(7, 17, 22, .48) 34%, rgba(7, 17, 22, .22) 64%, rgba(7, 17, 22, .52) 100%);
+  pointer-events: none;
+}
+
+.first-view-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.first-view-copy {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  max-width: 720px;
+  padding-left: clamp(18px, 2.4vw, 34px);
+  border-left: 2px solid rgba(247, 221, 177, .82);
+}
+
+.first-view h1 {
+  margin: 0;
+  color: var(--white);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: clamp(18px, 1.05vw, 20px);
+  font-weight: 700;
+  line-height: 2.25;
+  letter-spacing: .08em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .46);
+}
+
+.top-contact {
+  display: grid;
+  grid-template-columns: 27.5% 21% 21.5% 30%;
+  min-height: 166px;
+  background: var(--white);
+}
+
+.clinic-brand,
+.phone-block,
+.hours-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px clamp(18px, 2.1vw, 44px);
+}
+
+.clinic-brand {
+  align-items: center;
+  text-align: center;
+}
+
+.brand,
+.mobile-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 1.8vw, 34px);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.logo-mark {
+  position: relative;
+  display: inline-block;
+  width: 86px;
+  height: 58px;
+  flex: 0 0 auto;
+}
+
+.logo-mark i {
+  position: absolute;
+  display: block;
+  width: 42px;
+  height: 16px;
+  transform: skewY(-42deg) rotate(0deg);
+  background: var(--blue);
+}
+
+.logo-mark i:nth-child(1) {
+  left: 9px;
+  top: 26px;
+}
+
+.logo-mark i:nth-child(2) {
+  left: 35px;
+  top: 26px;
+}
+
+.logo-mark i:nth-child(3) {
+  left: 22px;
+  top: 10px;
+  width: 36px;
+  background: var(--gold);
+}
+
+.clinic-brand p {
+  margin: 12px 0 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(15px, 1.05vw, 21px);
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.main-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #15233a;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Times New Roman", serif;
+  font-size: clamp(30px, 2.35vw, 44px);
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.main-phone::before {
+  content: "";
+  width: .75em;
+  height: .75em;
+  background: currentColor;
+  clip-path: polygon(19% 0, 44% 0, 52% 26%, 38% 36%, 61% 64%, 74% 51%, 100% 62%, 100% 87%, 85% 100%, 60% 93%, 34% 73%, 13% 47%, 0 18%);
+}
+
+.phone-block p,
+.hours-block p {
+  margin: 0;
+  font-size: clamp(13px, .9vw, 16px);
+  line-height: 1.75;
+}
+
+.phone-block strong {
+  color: #17233b;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.1em;
+}
+
+.hours-block {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-weight: 700;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  background: #e9ecef;
+}
+
+.quick-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 166px;
+  gap: 10px;
+  color: var(--cream);
+  background: var(--deep);
+  border-left: 1px solid rgba(255, 255, 255, .18);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(15px, 1vw, 18px);
+  font-weight: 700;
+}
+
+.quick-actions a::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.section {
+  padding: clamp(70px, 9vw, 118px) clamp(20px, 6vw, 96px);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(280px, 500px) minmax(280px, 1fr);
+  gap: clamp(36px, 7vw, 92px);
+  align-items: center;
+  background: var(--white);
+}
+
+.section-title {
+  max-width: 760px;
+}
+
+.section-title.centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #92794d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section p,
+.site-footer p {
+  margin: 0;
+}
+
+.section-title h2,
+.doctor-panel h2,
+.cta h2,
+.access h2 {
+  margin: 10px 0 16px;
+  font-family: Georgia, "Times New Roman", "Yu Mincho", serif;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.soft {
+  background: var(--soft);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 46px;
+}
+
+.feature-grid article {
+  min-height: 292px;
+  padding: 32px 26px;
+  background: var(--white);
+  box-shadow: 0 8px 26px rgba(23, 75, 83, .08);
+}
+
+.num {
+  color: #92794d;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+h3 {
+  margin: 12px 0 10px;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.feature-grid p,
+.service-card p,
+.doctor-panel p,
+.access li,
+.news-list span {
+  color: var(--muted);
+}
+
+.service-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.service-card {
+  display: block;
+  min-height: 252px;
+  padding: clamp(28px, 4vw, 44px);
+  color: var(--white);
+  background: linear-gradient(135deg, #174b53, #2f7f73);
+  box-shadow: var(--shadow);
+  transition: transform .2s ease;
+}
+
+.service-card.accent {
+  background: linear-gradient(135deg, #725f36, #2f7f73);
+}
+
+.service-card:hover,
+.menu-list a:hover,
+.symptom-list a:hover {
+  transform: translateY(-2px);
+}
+
+.service-card span {
+  color: rgba(255, 255, 255, .72);
+  font-size: 13px;
+}
+
+.service-card h3 {
+  max-width: 620px;
+  font-family: Georgia, "Times New Roman", "Yu Mincho", serif;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 500;
+}
+
+.menu-list,
+.symptom-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.menu-list a,
+.symptom-list a {
+  min-height: 62px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: #174b53;
+  font-weight: 700;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+  background: var(--white);
+}
+
+.symptom-list {
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0;
+}
+
+.director-heading {
+  margin-bottom: clamp(28px, 4vw, 46px);
+  max-width: 880px;
+}
+
+.director-heading h2 {
+  margin-bottom: 10px;
+}
+
+.director-heading p:last-child {
+  max-width: 880px;
+  margin: 0 auto;
+  color: var(--muted);
+  text-align: left;
+}
+
+.doctor-panel {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 420px);
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(30px, 4.4vw, 54px);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.director-photo {
+  margin: 0;
+}
+
+.director-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.director-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  color: #174b53;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-weight: 700;
+}
+
+.director-photo figcaption span {
+  color: #92794d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.director-profile,
+.access ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.director-profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 1180px;
+  margin: 18px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.director-profile li {
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, .72);
+}
+
+.director-profile li,
+.doctor-panel li {
+  margin: 12px 0;
+  color: #174b53;
+  font-weight: 700;
+}
+
+.news {
+  background: var(--white);
+}
+
+.news-list {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.news-list a {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-list time {
+  color: #2f7f73;
+  font-weight: 700;
+}
+
+.access {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 520px);
+  gap: clamp(32px, 7vw, 90px);
+  align-items: center;
+  background: var(--soft);
+}
+
+.map-box {
+  display: grid;
+  min-height: 330px;
+  place-items: center;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(47, 127, 115, .08) 1px, transparent 1px),
+    linear-gradient(rgba(47, 127, 115, .08) 1px, transparent 1px),
+    #fff;
+  background-size: 32px 32px;
+  color: #2f7f73;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(56px, 7vw, 82px) clamp(20px, 6vw, 96px);
+  color: var(--white);
+  background: #174b53;
+}
+
+.cta h2 {
+  color: var(--white);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.primary {
+  color: var(--white);
+  background: #174b53;
+}
+
+.light {
+  border-color: rgba(255, 255, 255, .7);
+  color: var(--white);
+  background: rgba(255, 255, 255, .16);
+}
+
+.site-footer {
+  padding: 46px clamp(20px, 6vw, 96px) 24px;
+  background: #102c31;
+  color: rgba(255, 255, 255, .78);
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 32px;
+}
+
+.footer-brand {
+  color: var(--white);
+}
+
+.site-footer nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 28px;
+}
+
+.site-footer small {
+  display: block;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+@media (max-width: 1120px) {
+  .top-contact {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  .quick-actions {
+    grid-column: 1 / -1;
+  }
+
+  .feature-grid,
+  .menu-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    background: var(--white);
+  }
+
+  .site-header {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--white);
+    border-top: 5px solid var(--paper);
+  }
+
+  .mobile-header {
+    display: grid;
+    grid-template-columns: 1fr 54px 54px 54px 56px;
+    min-height: 58px;
+    border-left: 4px solid var(--paper);
+    border-right: 4px solid var(--paper);
+  }
+
+  .mobile-logo {
+    gap: 8px;
+    padding: 0 8px 0 11px;
+    font-size: 12px;
+  }
+
+  .mobile-logo .logo-mark {
+    width: 38px;
+    height: 28px;
+  }
+
+  .mobile-logo .logo-mark i {
+    width: 19px;
+    height: 7px;
+  }
+
+  .mobile-logo .logo-mark i:nth-child(1) {
+    left: 4px;
+    top: 14px;
+  }
+
+  .mobile-logo .logo-mark i:nth-child(2) {
+    left: 16px;
+    top: 14px;
+  }
+
+  .mobile-logo .logo-mark i:nth-child(3) {
+    left: 10px;
+    top: 6px;
+    width: 16px;
+  }
+
+  .mobile-tool,
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+    border: 0;
+    border-left: 1px solid #d6dadd;
+    background: #fff;
+    color: #202b34;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .mobile-tool.recruit {
+    background: var(--cream);
+  }
+
+  .tool-icon {
+    display: grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    border-radius: 3px;
+    color: var(--deep);
+    font: 700 9px/1 Arial, sans-serif;
+  }
+
+  .menu-button {
+    background: var(--deep);
+    color: var(--cream);
+  }
+
+  .menu-button span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 2px 0;
+    background: var(--cream);
+  }
+
+  .menu-button small {
+    font-size: 8px;
+  }
+
+  .first-view {
+    min-height: 360px;
+    padding: 210px 28px 28px;
+    background: #071116 url("assets/ophthalmology-hero.png") center top / cover no-repeat;
+  }
+
+  .first-view::before {
+    background: linear-gradient(rgba(255, 255, 255, .56), rgba(0, 0, 0, .58));
+  }
+
+  .first-view-copy {
+    align-self: end;
+  }
+
+  .first-view h1 {
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .top-contact {
+    display: block;
+    min-height: 0;
+    padding: 28px 0 0;
+  }
+
+  .clinic-brand,
+  .phone-block,
+  .hours-block {
+    padding: 0 18px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .brand {
+    gap: 12px;
+    font-size: 26px;
+  }
+
+  .brand .logo-mark {
+    width: 72px;
+    height: 50px;
+  }
+
+  .brand .logo-mark i {
+    width: 35px;
+    height: 13px;
+  }
+
+  .brand .logo-mark i:nth-child(1) {
+    left: 7px;
+    top: 23px;
+  }
+
+  .brand .logo-mark i:nth-child(2) {
+    left: 29px;
+    top: 23px;
+  }
+
+  .brand .logo-mark i:nth-child(3) {
+    left: 18px;
+    top: 9px;
+    width: 30px;
+  }
+
+  .clinic-brand p {
+    margin-top: 9px;
+    font-size: 16px;
+  }
+
+  .main-phone {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+
+  .phone-block p {
+    margin: 6px 0 24px;
+    font-size: 13px;
+  }
+
+  .hours-block {
+    display: none;
+  }
+
+  .quick-actions {
+    grid-template-rows: 64px;
+  }
+
+  .quick-actions a {
+    min-height: 64px;
+    font-size: 18px;
+  }
+
+  .intro,
+  .service-layout,
+  .split,
+  .doctor-panel,
+  .access {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid,
+  .menu-list,
+  .symptom-list,
+  .director-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .director-photo img {
+    max-height: 460px;
+  }
+
+  .cta,
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-list a {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .site-footer nav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
